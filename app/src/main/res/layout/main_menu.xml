@@ -17,9 +17,23 @@
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
-        android:id="@+id/profile_group"
+        android:id="@+id/activity_group"
         style="@style/LinearLayout.GuillotineItem"
         android:layout_marginTop="@dimen/guillotine_medium_margin">
+
+        <ImageView
+            style="@style/ImageView.GuillotineItem"
+            android:src="@drawable/ic_activity_active" />
+
+        <com.jimdoesnotgym.ms076.syscheck.widget.CanaroTextView
+            style="@style/TextView.GuillotineItem.Selected"
+            android:text="@string/system" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/profile_group"
+        style="@style/LinearLayout.GuillotineItem"
+        android:layout_marginTop="@dimen/guillotine_small_margin">
 
         <ImageView
             style="@style/ImageView.GuillotineItem"
@@ -37,7 +51,7 @@
 
         <ImageView
             style="@style/ImageView.GuillotineItem"
-            android:src="@drawable/ic_profile" />
+            android:src="@drawable/ic_network" />
 
         <com.jimdoesnotgym.ms076.syscheck.widget.CanaroTextView
             style="@style/TextView.GuillotineItem"
@@ -51,7 +65,7 @@
 
         <ImageView
             style="@style/ImageView.GuillotineItem"
-            android:src="@drawable/ic_profile" />
+            android:src="@drawable/ic_apps" />
 
         <com.jimdoesnotgym.ms076.syscheck.widget.CanaroTextView
             style="@style/TextView.GuillotineItem"
@@ -70,20 +84,6 @@
         <com.jimdoesnotgym.ms076.syscheck.widget.CanaroTextView
             style="@style/TextView.GuillotineItem"
             android:text="@string/hardware" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/activity_group"
-        style="@style/LinearLayout.GuillotineItem"
-        android:layout_marginTop="@dimen/guillotine_small_margin">
-
-        <ImageView
-            style="@style/ImageView.GuillotineItem"
-            android:src="@drawable/ic_activity_active" />
-
-        <com.jimdoesnotgym.ms076.syscheck.widget.CanaroTextView
-            style="@style/TextView.GuillotineItem.Selected"
-            android:text="@string/system" />
     </LinearLayout>
 
 </LinearLayout>
