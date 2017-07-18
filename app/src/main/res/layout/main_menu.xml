@@ -17,7 +17,7 @@
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
-        android:id="@+id/activity_group"
+        android:id="@+id/system_group"
         style="@style/LinearLayout.GuillotineItem"
         android:layout_marginTop="@dimen/guillotine_medium_margin">
 
@@ -27,11 +27,12 @@
 
         <com.jimdoesnotgym.ms076.syscheck.widget.CanaroTextView
             style="@style/TextView.GuillotineItem.Selected"
-            android:text="@string/system" />
+            android:text="@string/system"
+            android:id="@+id/system_menu_text"/>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/profile_group"
+        android:id="@+id/battery_group"
         style="@style/LinearLayout.GuillotineItem"
         android:layout_marginTop="@dimen/guillotine_small_margin">
 
@@ -41,7 +42,8 @@
 
         <com.jimdoesnotgym.ms076.syscheck.widget.CanaroTextView
             style="@style/TextView.GuillotineItem"
-            android:text="@string/battery" />
+            android:text="@string/battery"
+            android:id="@+id/battery_menu_text"/>
     </LinearLayout>
 
     <LinearLayout
@@ -55,7 +57,8 @@
 
         <com.jimdoesnotgym.ms076.syscheck.widget.CanaroTextView
             style="@style/TextView.GuillotineItem"
-            android:text="@string/network" />
+            android:text="@string/network"
+            android:id="@+id/network_menu_text"/>
     </LinearLayout>
 
     <LinearLayout
@@ -69,11 +72,12 @@
 
         <com.jimdoesnotgym.ms076.syscheck.widget.CanaroTextView
             style="@style/TextView.GuillotineItem"
-            android:text="@string/apps" />
+            android:text="@string/apps"
+            android:id="@+id/apps_menu_text"/>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/feed_group"
+        android:id="@+id/hardware_group"
         style="@style/LinearLayout.GuillotineItem"
         android:layout_marginTop="@dimen/guillotine_small_margin">
 
@@ -83,7 +87,8 @@
 
         <com.jimdoesnotgym.ms076.syscheck.widget.CanaroTextView
             style="@style/TextView.GuillotineItem"
-            android:text="@string/hardware" />
+            android:text="@string/hardware"
+            android:id="@+id/hardware_menu_text"/>
     </LinearLayout>
 
 </LinearLayout>
