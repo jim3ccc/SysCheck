@@ -27,12 +27,41 @@
 
         <com.jimdoesnotgym.ms076.syscheck.widget.CanaroTextView
             style="@style/TextView.GuillotineItem"
-            android:text="@string/profile" />
+            android:text="@string/battery" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/network_group"
+        style="@style/LinearLayout.GuillotineItem"
+        android:layout_marginTop="@dimen/guillotine_small_margin">
+
+        <ImageView
+            style="@style/ImageView.GuillotineItem"
+            android:src="@drawable/ic_profile" />
+
+        <com.jimdoesnotgym.ms076.syscheck.widget.CanaroTextView
+            style="@style/TextView.GuillotineItem"
+            android:text="@string/network" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/apps_group"
+        style="@style/LinearLayout.GuillotineItem"
+        android:layout_marginTop="@dimen/guillotine_small_margin">
+
+        <ImageView
+            style="@style/ImageView.GuillotineItem"
+            android:src="@drawable/ic_profile" />
+
+        <com.jimdoesnotgym.ms076.syscheck.widget.CanaroTextView
+            style="@style/TextView.GuillotineItem"
+            android:text="@string/apps" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/feed_group"
-        style="@style/LinearLayout.GuillotineItem">
+        style="@style/LinearLayout.GuillotineItem"
+        android:layout_marginTop="@dimen/guillotine_small_margin">
 
         <ImageView
             style="@style/ImageView.GuillotineItem"
@@ -40,12 +69,13 @@
 
         <com.jimdoesnotgym.ms076.syscheck.widget.CanaroTextView
             style="@style/TextView.GuillotineItem"
-            android:text="@string/feed" />
+            android:text="@string/hardware" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/activity_group"
-        style="@style/LinearLayout.GuillotineItem">
+        style="@style/LinearLayout.GuillotineItem"
+        android:layout_marginTop="@dimen/guillotine_small_margin">
 
         <ImageView
             style="@style/ImageView.GuillotineItem"
@@ -53,7 +83,7 @@
 
         <com.jimdoesnotgym.ms076.syscheck.widget.CanaroTextView
             style="@style/TextView.GuillotineItem.Selected"
-            android:text="@string/activity" />
+            android:text="@string/system" />
     </LinearLayout>
 
 </LinearLayout>

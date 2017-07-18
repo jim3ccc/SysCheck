@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">SYSCHECK</string>
-    <string name="profile">PROFILE</string>
-    <string name="feed">FEED</string>
-    <string name="activity">ACTIVITY</string>
-    <string name="settings">SETTINGS</string>
+    <string name="apps">APPS</string>
+    <string name="hardware">HARDWARE</string>
+    <string name="system">SYSTEM</string>
+    <string name="network">NETWORK</string>
+    <string name="battery">BATTERY</string>
 </resources>
