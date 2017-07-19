@@ -1,5 +1,7 @@
 package com.jimdoesnotgym.ms076.syscheck.activity;
 
+import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -12,6 +14,8 @@ import android.widget.Toast;
 import com.jimdoesnotgym.ms076.syscheck.R;
 import com.jimdoesnotgym.ms076.syscheck.widget.CanaroTextView;
 import com.yalantis.guillotine.animation.GuillotineAnimation;
+
+import org.w3c.dom.Text;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -87,27 +91,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        clearTextColor();
         switch (v.getId()){
             case R.id.system_menu_text:
-                //TODO
+                setSelectedColor(v);
+                Toast.makeText(this, "systemView", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.battery_menu_text:
-                //TODO
+                setSelectedColor(v);
                 Toast.makeText(this, "batteryView", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.network_menu_text:
-                //TODO
+                setSelectedColor(v);
+                Toast.makeText(this, "networkView", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.apps_menu_text:
-                //TODO
+                setSelectedColor(v);
+                Toast.makeText(this, "appsView", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.hardware_menu_text:
-                //TODO
+                setSelectedColor(v);
+                Toast.makeText(this, "hardwareView", Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+
+    public void clearTextColor(){
+        systemView.setTextColor(Color.WHITE);
+        batteryView.setTextColor(Color.WHITE);
+        networkView.setTextColor(Color.WHITE);
+        appsView.setTextColor(Color.WHITE);
+        hardwareView.setTextColor(Color.WHITE);
+
+    }
+
+    public void setSelectedColor(View v){
+        ((TextView) v).setTextColor(ContextCompat.getColor(this, R.color.sys_selected));
     }
 }
