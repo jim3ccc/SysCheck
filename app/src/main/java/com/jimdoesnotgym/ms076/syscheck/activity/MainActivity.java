@@ -106,32 +106,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         clearTextColor();
         setSelectedColor(v);
         mGuillotineAnim.close();
-        switch (v.getId()){
-            case R.id.system_menu_text:
-                Toast.makeText(this, "systemView", Toast.LENGTH_SHORT).show();
-                toolbarHeaderText.setText(getResources().getText(R.string.system));
-                break;
-
-            case R.id.battery_menu_text:
-                Toast.makeText(this, "batteryView", Toast.LENGTH_SHORT).show();
-                toolbarHeaderText.setText(getResources().getText(R.string.battery));
-                break;
-
-            case R.id.network_menu_text:
-                Toast.makeText(this, "networkView", Toast.LENGTH_SHORT).show();
-                toolbarHeaderText.setText(getResources().getText(R.string.network));
-                break;
-
-            case R.id.apps_menu_text:
-                Toast.makeText(this, "appsView", Toast.LENGTH_SHORT).show();
-                toolbarHeaderText.setText(getResources().getText(R.string.apps));
-                break;
-
-            case R.id.hardware_menu_text:
-                Toast.makeText(this, "hardwareView", Toast.LENGTH_SHORT).show();
-                toolbarHeaderText.setText(getResources().getText(R.string.hardware));
-                break;
-        }
     }
 
     private void replaceWithFragment(View v) {
@@ -139,26 +113,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.system_menu_text:
                 SystemFragment systemFragment = new SystemFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.content, systemFragment).commit();
+                toolbarHeaderText.setText(getResources().getText(R.string.system));
+                Toast.makeText(this, "systemView", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.battery_menu_text:
                 BatteryFragment batteryFragment = new BatteryFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.content, batteryFragment).commit();
+                toolbarHeaderText.setText(getResources().getText(R.string.battery));
+                Toast.makeText(this, "batteryView", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.network_menu_text:
                 NetworkFragment networkFragment = new NetworkFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.content, networkFragment).commit();
+                toolbarHeaderText.setText(getResources().getText(R.string.network));
+                Toast.makeText(this, "networkView", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.apps_menu_text:
                 AppsFragment appsFragment = new AppsFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.content, appsFragment).commit();
+                toolbarHeaderText.setText(getResources().getText(R.string.apps));
+                Toast.makeText(this, "appsView", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.hardware_menu_text:
                 HardwareFragment hardwareFragment = new HardwareFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.content, hardwareFragment).commit();
+                toolbarHeaderText.setText(getResources().getText(R.string.hardware));
+                Toast.makeText(this, "hardwareView", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
