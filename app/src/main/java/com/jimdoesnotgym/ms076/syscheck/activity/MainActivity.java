@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private CanaroTextView networkView;
     private CanaroTextView appsView;
     private CanaroTextView hardwareView;
+    private GuillotineAnimation mGuillotineAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         View guillotineMenu = LayoutInflater.from(this).inflate(R.layout.main_menu, null);
         root.addView(guillotineMenu);
 
-        new GuillotineAnimation.GuillotineBuilder(guillotineMenu, guillotineMenu.findViewById(R.id.guillotine_hamburger), contentHamburger)
+        mGuillotineAnim = new GuillotineAnimation.GuillotineBuilder(guillotineMenu, guillotineMenu.findViewById(R.id.guillotine_hamburger), contentHamburger)
                 .setStartDelay(RIPPLE_DURATION)
                 .setActionBarViewForAnimation(toolbar)
                 .setClosedOnStart(true)
@@ -96,25 +97,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.system_menu_text:
                 setSelectedColor(v);
                 Toast.makeText(this, "systemView", Toast.LENGTH_SHORT).show();
+                mGuillotineAnim.close();
                 break;
 
             case R.id.battery_menu_text:
                 setSelectedColor(v);
                 Toast.makeText(this, "batteryView", Toast.LENGTH_SHORT).show();
+                mGuillotineAnim.close();
                 break;
 
             case R.id.network_menu_text:
                 setSelectedColor(v);
                 Toast.makeText(this, "networkView", Toast.LENGTH_SHORT).show();
+                mGuillotineAnim.close();
                 break;
 
             case R.id.apps_menu_text:
                 setSelectedColor(v);
                 Toast.makeText(this, "appsView", Toast.LENGTH_SHORT).show();
+                mGuillotineAnim.close();
                 break;
 
             case R.id.hardware_menu_text:
                 setSelectedColor(v);
+                mGuillotineAnim.close();
                 Toast.makeText(this, "hardwareView", Toast.LENGTH_SHORT).show();
                 break;
         }
