@@ -60,6 +60,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        SystemFragment systemFragment = new SystemFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.content, systemFragment).commit();
+
         if (toolbar != null) {
             setSupportActionBar(toolbar);
             getSupportActionBar().setTitle(null);
