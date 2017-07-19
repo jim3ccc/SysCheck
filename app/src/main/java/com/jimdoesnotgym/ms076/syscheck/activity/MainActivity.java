@@ -12,6 +12,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jimdoesnotgym.ms076.syscheck.R;
+import com.jimdoesnotgym.ms076.syscheck.fragments.AppsFragment;
+import com.jimdoesnotgym.ms076.syscheck.fragments.BatteryFragment;
+import com.jimdoesnotgym.ms076.syscheck.fragments.HardwareFragment;
+import com.jimdoesnotgym.ms076.syscheck.fragments.NetworkFragment;
+import com.jimdoesnotgym.ms076.syscheck.fragments.SystemFragment;
 import com.jimdoesnotgym.ms076.syscheck.widget.CanaroTextView;
 import com.yalantis.guillotine.animation.GuillotineAnimation;
 
@@ -30,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     FrameLayout root;
     @BindView(R.id.content_hamburger)
     View contentHamburger;
+    @BindView(R.id.toolbar_header_text)
+    TextView toolbarHeaderText;
     /*@BindView(R.id.system_menu_text)
     CanaroTextView systemView;
     @BindView(R.id.battery_menu_text)
@@ -92,36 +99,63 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        replaceWithFragment(v);
         clearTextColor();
+        setSelectedColor(v);
+        mGuillotineAnim.close();
         switch (v.getId()){
             case R.id.system_menu_text:
-                setSelectedColor(v);
                 Toast.makeText(this, "systemView", Toast.LENGTH_SHORT).show();
-                mGuillotineAnim.close();
+                toolbarHeaderText.setText(getResources().getText(R.string.system));
                 break;
 
             case R.id.battery_menu_text:
-                setSelectedColor(v);
                 Toast.makeText(this, "batteryView", Toast.LENGTH_SHORT).show();
-                mGuillotineAnim.close();
+                toolbarHeaderText.setText(getResources().getText(R.string.battery));
                 break;
 
             case R.id.network_menu_text:
-                setSelectedColor(v);
                 Toast.makeText(this, "networkView", Toast.LENGTH_SHORT).show();
-                mGuillotineAnim.close();
+                toolbarHeaderText.setText(getResources().getText(R.string.network));
                 break;
 
             case R.id.apps_menu_text:
-                setSelectedColor(v);
                 Toast.makeText(this, "appsView", Toast.LENGTH_SHORT).show();
-                mGuillotineAnim.close();
+                toolbarHeaderText.setText(getResources().getText(R.string.apps));
                 break;
 
             case R.id.hardware_menu_text:
-                setSelectedColor(v);
-                mGuillotineAnim.close();
                 Toast.makeText(this, "hardwareView", Toast.LENGTH_SHORT).show();
+                toolbarHeaderText.setText(getResources().getText(R.string.hardware));
+                break;
+        }
+    }
+
+    private void replaceWithFragment(View v) {
+        switch (v.getId()){
+            case R.id.system_menu_text:
+                SystemFragment systemFragment = new SystemFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.content, systemFragment).commit();
+                break;
+
+            case R.id.battery_menu_text:
+                BatteryFragment batteryFragment = new BatteryFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.content, batteryFragment).commit();
+                break;
+
+            case R.id.network_menu_text:
+                NetworkFragment networkFragment = new NetworkFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.content, networkFragment).commit();
+                break;
+
+            case R.id.apps_menu_text:
+                AppsFragment appsFragment = new AppsFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.content, appsFragment).commit();
+                break;
+
+            case R.id.hardware_menu_text:
+                HardwareFragment hardwareFragment = new HardwareFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.content, hardwareFragment).commit();
                 break;
         }
     }
